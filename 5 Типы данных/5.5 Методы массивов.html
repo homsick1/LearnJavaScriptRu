@@ -11,180 +11,180 @@
 <body>
     <script>
         'use strict'
-        // // Добавление/удаление элементов
+        // Добавление/удаление элементов
 
-        // // 0. push(), pop(), shift(), unshift()
+        // 0. push(), pop(), shift(), unshift()
 
-        // // 1. splice()
-        // // Метод изменяет содержимое массива путем удаления или замены
-        // // существующих элементов и/или добавления новых элементов
+        // 1. splice()
+        // Метод изменяет содержимое массива путем удаления или замены
+        // существующих элементов и/или добавления новых элементов
 
-        // // Примеры
-        // // Начиная с индекса 2 (отсчёт начинается с 0)
-        // // Удалить 0 элементов
-        // // Вставить 'скалярия'
-        // let myFish = ['ангел', 'клоун', 'мандарин', 'осетр'];
-        // myFish.splice(2, 0, 'скалярия');
-        // alert(myFish);
+        // Примеры
+        // Начиная с индекса 2 (отсчёт начинается с 0)
+        // Удалить 0 элементов
+        // Вставить 'скалярия'
+        let myFish = ['ангел', 'клоун', 'мандарин', 'осетр'];
+        myFish.splice(2, 0, 'скалярия');
+        alert(myFish);
 
-        // // Начиная с индекса 2
-        // // Удалить 0 элементов
-        // // Вставить 'скалярия' и 'гитара'
-        // myFish = ['ангел', 'клоун', 'мандарин', 'осетр'];
-        // myFish.splice(2, 0, 'скалярия', 'гитара');
-        // alert(myFish);
+        // Начиная с индекса 2
+        // Удалить 0 элементов
+        // Вставить 'скалярия' и 'гитара'
+        myFish = ['ангел', 'клоун', 'мандарин', 'осетр'];
+        myFish.splice(2, 0, 'скалярия', 'гитара');
+        alert(myFish);
 
-        // // Начиная с индекса 3
-        // // Удалить 1 элемент
-        // myFish = ['ангел', 'клоун', 'скалярия', 'мандарин', 'осетр'];
-        // myFish.splice(3, 1);
-        // alert(myFish);
+        // Начиная с индекса 3
+        // Удалить 1 элемент
+        myFish = ['ангел', 'клоун', 'скалярия', 'мандарин', 'осетр'];
+        myFish.splice(3, 1);
+        alert(myFish);
 
-        // // Начиная с индекса 2
-        // // Удалить 1 элемент
-        // // Вставить 'труба'
-        // myFish = ['ангел', 'клоун', 'скалярия', 'осетр'];
-        // myFish.splice(2, 1, 'труба');
-        // alert(myFish);
+        // Начиная с индекса 2
+        // Удалить 1 элемент
+        // Вставить 'труба'
+        myFish = ['ангел', 'клоун', 'скалярия', 'осетр'];
+        myFish.splice(2, 1, 'труба');
+        alert(myFish);
 
-        // // Начиная с индекса 0
-        // // Удалить 2 элемента
-        // // Вставить 'попугай', 'карась' и'сом'
-        // myFish = ['ангел', 'клоун', 'труба', 'осетр'];
-        // myFish.splice(0, 2, 'попугай', 'карась', 'сом');
-        // alert(myFish);
+        // Начиная с индекса 0
+        // Удалить 2 элемента
+        // Вставить 'попугай', 'карась' и'сом'
+        myFish = ['ангел', 'клоун', 'труба', 'осетр'];
+        myFish.splice(0, 2, 'попугай', 'карась', 'сом');
+        alert(myFish);
 
-        // // Начиная с индекса 2
-        // // Удалить 2 элемента
-        // myFish = ['попугай', 'карась', 'сом', 'труба', 'осетр'];
-        // myFish.splice(2, 2);
-        // alert(myFish);
+        // Начиная с индекса 2
+        // Удалить 2 элемента
+        myFish = ['попугай', 'карась', 'сом', 'труба', 'осетр'];
+        myFish.splice(2, 2);
+        alert(myFish);
 
-        // // Начиная с индекса -2
-        // // Удалить 1 элемент
-        // myFish = ['ангел', 'клоун', 'мандарин', 'осетр'];
-        // myFish.splice(-2, 1);
-        // alert(myFish);
+        // Начиная с индекса -2
+        // Удалить 1 элемент
+        myFish = ['ангел', 'клоун', 'мандарин', 'осетр'];
+        myFish.splice(-2, 1);
+        alert(myFish);
 
-        // // Начиная с индекса 2
-        // // Удалить все элементы
-        // myFish = ['ангел', 'клоун', 'мандарин', 'осетр'];
-        // myFish.splice(2);
-        // alert(myFish);
+        // Начиная с индекса 2
+        // Удалить все элементы
+        myFish = ['ангел', 'клоун', 'мандарин', 'осетр'];
+        myFish.splice(2);
+        alert(myFish);
 
-        // // 2. slice()
-        // // Метод возвращает новый массив, в который копирует элементы,
-        // // начиная с индекса stsrt и до end (не включая end)
+        // 2. slice()
+        // Метод возвращает новый массив, в который копирует элементы,
+        // начиная с индекса stsrt и до end (не включая end)
 
-        // let fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
-        // let citrus = fruits.slice(1, 3);
-        // alert(citrus);
+        let fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+        let citrus = fruits.slice(1, 3);
+        alert(citrus);
 
-        // // 3. concat()
-        // // Метод возвращает новый массив, в который копирует данные
-        // // из других массивов и/или значения
+        // 3. concat()
+        // Метод возвращает новый массив, в который копирует данные
+        // из других массивов и/или значения
 
-        // // Соединение двух массивов
-        // let array1 = ['a', 'b', 'c'];
-        // let array2 = ['d', 'e', 'f'];
-        // let array3 = array1.concat(array2);
-        // alert(array3);
+        // Соединение двух массивов
+        let array1 = ['a', 'b', 'c'];
+        let array2 = ['d', 'e', 'f'];
+        let array3 = array1.concat(array2);
+        alert(array3);
 
 
-        // // Соединение трех массивов
-        // let num1 = [1, 2, 3],
-        //     num2 = [4, 5, 6],
-        //     num3 = [7, 8, 9];
+        // Соединение трех массивов
+        let num1 = [1, 2, 3],
+            num2 = [4, 5, 6],
+            num3 = [7, 8, 9];
 
-        // let nums = num1.concat(num2,num3);
-        // alert(nums);
+        let nums = num1.concat(num2,num3);
+        alert(nums);
 
-        // // Соединение массива и значений
-        // let alpha = ['a','b','c'];
-        // let alphaNumeric = alpha.concat(1,[2,3]);
-        // alert(alphaNumeric);
+        // Соединение массива и значений
+        let alpha = ['a','b','c'];
+        let alphaNumeric = alpha.concat(1,[2,3]);
+        alert(alphaNumeric);
 
-        // // Symbol.isConcatSpreadable
-        // // Символ, который используется для обработки объекта как массива
-        // // Для корректной обработки в объекте должны быть числовые свойства
-        // // и length
-        // let x = [1, 2, 3];
-        // let fakeArray = {
-        //     [Symbol.isConcatSpreadable]: true,
-        //     length: 2,
-        //     0: 'hello',
-        //     1: 'world',
-        // };
-        // let xFakerArray = x.concat(fakeArray);
-        // alert(xFakerArray);
+        // Symbol.isConcatSpreadable
+        // Символ, который используется для обработки объекта как массива
+        // Для корректной обработки в объекте должны быть числовые свойства
+        // и length
+        let x = [1, 2, 3];
+        let fakeArray = {
+            [Symbol.isConcatSpreadable]: true,
+            length: 2,
+            0: 'hello',
+            1: 'world',
+        };
+        let xFakerArray = x.concat(fakeArray);
+        alert(xFakerArray);
 
-        // // без символа Symbol.isConcatSpreadable
-        // fakeArray[Symbol.isConcatSpreadable] = false;
-        // xFakerArray = x.concat(fakeArray);
-        // alert(xFakerArray);
+        // без символа Symbol.isConcatSpreadable
+        fakeArray[Symbol.isConcatSpreadable] = false;
+        xFakerArray = x.concat(fakeArray);
+        alert(xFakerArray);
 
-        // // 4. forEach()
-        // // Метод, выполняет указанную функцию один раз для каждого элемента
-        // // массива
+        // 4. forEach()
+        // Метод, выполняет указанную функцию один раз для каждого элемента
+        // массива
 
-        // const array4 = ['a', 'b', 'c'];
-        // array4.forEach(alert);
+        const array4 = ['a', 'b', 'c'];
+        array4.forEach(alert);
 
-        // // Функция не выполняется для удалённых или пропущенных элементов массива
-        // const arraySpace = [1, 3, , 7];
-        // let numCallbackRuns = 0;
+        // Функция не выполняется для удалённых или пропущенных элементов массива
+        const arraySpace = [1, 3, , 7];
+        let numCallbackRuns = 0;
 
-        // arraySpace.forEach((element) => { // стрелочная функция
-        //     alert(element);
-        //     numCallbackRuns++;
-        // })
+        arraySpace.forEach((element) => { // стрелочная функция
+            alert(element);
+            numCallbackRuns++;
+        })
 
-        // alert('numCallbackRuns: ' + numCallbackRuns);
+        alert('numCallbackRuns: ' + numCallbackRuns);
 
-        // // Вывод массива
-        // function logArrayElements(element, index, array) {
-        //     alert('a[' + index + '] = ' + element + ' в ' + array);
-        // }
+        // Вывод массива
+        function logArrayElements(element, index, array) {
+            alert('a[' + index + '] = ' + element + ' в ' + array);
+        }
 
-        // [2, 5, , 9].forEach(logArrayElements)
+        [2, 5, , 9].forEach(logArrayElements)
 
-        // // Поиск в массиве
+        // Поиск в массиве
 
-        // // 5. indexOf()
-        // // Метод возвращает первый индекс, по которому данный элеменет может
-        // // быть найден в массиве или -1, если такого индекса нет
-        // // Использует строгое сравнение ===
+        // 5. indexOf()
+        // Метод возвращает первый индекс, по которому данный элеменет может
+        // быть найден в массиве или -1, если такого индекса нет
+        // Использует строгое сравнение ===
 
-        // let array5 = [2, 5, 9];
-        // alert(array5.indexOf(2));
-        // alert(array5.indexOf(7));
-        // alert(array5.indexOf(9, 2));
-        // alert(array5.indexOf(2, -1));
-        // alert(array5.indexOf(2, -3));
+        let array5 = [2, 5, 9];
+        alert(array5.indexOf(2));
+        alert(array5.indexOf(7));
+        alert(array5.indexOf(9, 2));
+        alert(array5.indexOf(2, -1));
+        alert(array5.indexOf(2, -3));
 
-        // // 6. lastIndexOf()
-        // // Метод возвращает последний индекс, по которому данный элеменет может
-        // // быть найден в массиве или -1, если такого индекса нет
-        // // Использует строгое сравнение ===
+        // 6. lastIndexOf()
+        // Метод возвращает последний индекс, по которому данный элеменет может
+        // быть найден в массиве или -1, если такого индекса нет
+        // Использует строгое сравнение ===
 
-        // let array6 = [2, 5, 9, 2];
-        // alert(array6.lastIndexOf(2));
-        // alert(array6.lastIndexOf(7));
-        // alert(array6.lastIndexOf(2, 3));
-        // alert(array6.lastIndexOf(2, 2));
-        // alert(array6.lastIndexOf(2, -2));
-        // alert(array6.lastIndexOf(2, -1));
+        let array6 = [2, 5, 9, 2];
+        alert(array6.lastIndexOf(2));
+        alert(array6.lastIndexOf(7));
+        alert(array6.lastIndexOf(2, 3));
+        alert(array6.lastIndexOf(2, 2));
+        alert(array6.lastIndexOf(2, -2));
+        alert(array6.lastIndexOf(2, -1));
 
-        // // 7. includes()
-        // // Метод определяет содержит ли массив опеределенный элемент, возвращая
-        // // в зависимости от этого true или false
-        // // Использует строгое сравнение ===
+        // 7. includes()
+        // Метод определяет содержит ли массив опеределенный элемент, возвращая
+        // в зависимости от этого true или false
+        // Использует строгое сравнение ===
 
-        // alert([1, 2, 3].includes(2));
-        // alert([1, 2, 3].includes(4));
-        // alert([1, 2, 3].includes(3, 3));
-        // alert([1, 2, 3].includes(3, -1));
-        // alert([1, 2, NaN].includes(NaN));
+        alert([1, 2, 3].includes(2));
+        alert([1, 2, 3].includes(4));
+        alert([1, 2, 3].includes(3, 3));
+        alert([1, 2, 3].includes(3, -1));
+        alert([1, 2, NaN].includes(NaN));
 
         // 8. find()
         // Метод возвращает значение первого найденного в массиве элемента,
@@ -211,6 +211,18 @@
         alert([4, 6, 8, 12].findIndex(isPrime));
         alert([4, 5, 8, 12].findIndex(isPrime));
 
+        // 10. filter()
+        // Метод создаёт новый массив со всеми элементами, прошедшими проверку,
+        // задаваемую в передаваемой функции
+
+        const words = ['спрей', 'лимит', 'холодильник', 'разрушение', 'подарок'];
+      
+        const result = words.filter(word => word.length > 6);
+        alert(result);
+
+        // Найти все простые числа в массиве
+        let array7 = [4, 6, 8, 9, 12, 53, -17, 2, 5, 7, 31, 97, -1, 17];
+        alert(array7.filter(isPrime));
     </script>
 </body>
 
