@@ -10,6 +10,7 @@
 
 <body>
     <script>
+        'use strict'
         // Добавление/удаление элементов
 
         // 0. push(), pop(), shift(), unshift()
@@ -145,7 +146,45 @@
             alert('a[' + index + '] = ' + element + ' в ' + array);
         }
 
-        [2, 5, , 9].forEach(logArrayElements);
+        [2, 5, , 9].forEach(logArrayElements)
+
+        // Поиск в массиве
+
+        // 5. indexOf()
+        // Метод возвращает первый индекс, по которому данный элеменет может
+        // быть найден в массиве или -1, если такого индекса нет
+        // Использует строгое сравнение ===
+
+        let array5 = [2, 5, 9];
+        alert(array5.indexOf(2));
+        alert(array5.indexOf(7));
+        alert(array5.indexOf(9, 2));
+        alert(array5.indexOf(2, -1));
+        alert(array5.indexOf(2, -3));
+
+        // 6. lastIndexOf()
+        // Метод возвращает последний индекс, по которому данный элеменет может
+        // быть найден в массиве или -1, если такого индекса нет
+        // Использует строгое сравнение ===
+
+        let array6 = [2, 5, 9, 2];
+        alert(array6.lastIndexOf(2));
+        alert(array6.lastIndexOf(7));
+        alert(array6.lastIndexOf(2, 3));
+        alert(array6.lastIndexOf(2, 2));
+        alert(array6.lastIndexOf(2, -2));
+        alert(array6.lastIndexOf(2, -1));
+
+        // 7. includes()
+        // Метод определяет содержит ли массив опеределенный элемент, возвращая
+        // в зависимости от этого true или false
+        // Использует строгое сравнение ===
+
+        alert([1, 2, 3].includes(2));
+        alert([1, 2, 3].includes(4));
+        alert([1, 2, 3].includes(3, 3));
+        alert([1, 2, 3].includes(3, -1));
+        alert([1, 2, NaN].includes(NaN));
     </script>
 </body>
 
