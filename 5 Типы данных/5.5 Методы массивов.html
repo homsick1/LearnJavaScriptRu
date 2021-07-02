@@ -271,46 +271,66 @@
         //     alert(a + ' <> ' + b);
         // });
 
-        // 13. reverse()
-        // Метод меняет порядок элементов на обратный
+        // // 13. reverse()
+        // // Метод меняет порядок элементов на обратный
 
-        let array9 = ['один', 'два', 'три'];
-        array9.reverse();
+        // let array9 = ['один', 'два', 'три'];
+        // array9.reverse();
 
-        alert(array9);
+        // alert(array9);
 
-        // 14. split()
-        // Метод разбивает объект на массив строк путём разделения строки
-        // указанной подстрокой
+        // // 14. split()
+        // // Метод разбивает объект на массив строк путём разделения строки
+        // // указанной подстрокой
 
-        let names = 'Вася, Петя, Маша';
-        let arrayNames = names.split(', ');
-        
-        for (let name of arrayNames) {
-            alert(`Сообщение получит: ${name}.`);
-        }
+        // let names = 'Вася, Петя, Маша';
+        // let arrayNames = names.split(', ');
 
-        // Второй аргумент - ограничение на количество элементов в массиве
-        let array10 = 'Вася, Петя, Маша'.split(', ', 2);
-        alert(array10);
+        // for (let name of arrayNames) {
+        //     alert(`Сообщение получит: ${name}.`);
+        // }
 
-        // Разбивка по буквам
-        let string0 = 'тест';
-        alert(string0.split(''));
+        // // Второй аргумент - ограничение на количество элементов в массиве
+        // let array10 = 'Вася, Петя, Маша'.split(', ', 2);
+        // alert(array10);
 
-        // 15. join()
-        // Метод объединяет все элементы массива в строку
-        
-        let array11 = ['Ветер', 'Дождь','Огонь'];
-        let string1 = array11.join();
-        let string2 = array11.join(', ');
-        let string3 = array11.join(' + ');
-        let string4 = array11.join('');
-        alert(string1);
-        alert(string2);
-        alert(string3);
-        alert(string4);
-    </script>
+        // // Разбивка по буквам
+        // let string0 = 'тест';
+        // alert(string0.split(''));
+
+        // // 15. join()
+        // // Метод объединяет все элементы массива в строку
+
+        // let array11 = ['Ветер', 'Дождь', 'Огонь'];
+        // let string1 = array11.join();
+        // let string2 = array11.join(', ');
+        // let string3 = array11.join(' + ');
+        // let string4 = array11.join('');
+        // alert(string1);
+        // alert(string2);
+        // alert(string3);
+        // alert(string4);
+
+        // 16. reduce()
+        // Метод применяет функцию reducer к каждому элементу массива (слева-направо)
+        // возвращая одно результирующее значение
+
+        const array12 = [1, 2, 3, 4];
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+        alert(array12.reduce(reducer));
+        alert(array12.reduce(reducer, 5)); // 5 - это начальное значение
+
+        // 17. reduceRight()
+        // Метод применяет функцию reducer к каждому элементу массива (справа-налево)
+        // возвращая одно результирующее значение
+
+        const array13 = [1, 2, 3, 4];
+        const reducer1 = (accumulator, currentValue) => accumulator + currentValue;
+
+        alert(array13.reduce(reducer1));
+        alert(array13.reduce(reducer1, 5)); // 5 - это начальное значение
+        </script>
 </body>
 
 </html>
