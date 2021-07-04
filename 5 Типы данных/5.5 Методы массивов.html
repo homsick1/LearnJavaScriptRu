@@ -401,17 +401,50 @@
         // arr1.sort(compareReverseNumbers);
         // alert(arr1);
 
-        // 5. Скопировать и отсортировать массив
-        function copySorted(arr) {
-            return arr.slice().sort();
+        // // 5. Скопировать и отсортировать массив
+        // function copySorted(arr) {
+        //     return arr.slice().sort();
+
+        // }
+
+        // let arr2 = ["HTML", "JavaScript", "CSS"];
+        // let sorted = copySorted(arr2);
+
+        // alert(sorted);
+        // alert(arr2);
+
+        // 6. Создать расширяемый калькулятор
+        function Calculator() {
+            this.methods = {
+                "-": (a, b) => a - b,
+                "+": (a, b) => a + b,
+            };
+            this.calculate = function (str) {
+                let split = str.split(' '),
+                    a = +split[0],
+                    op = split[1],
+                    b = +split[2];
+
+                if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+                    return NaN;
+                }
+                return this.methods[op](a, b);
+            }
+            this.addMethod = function (name, func) {
+                this.methods[name] = func;
+            };
 
         }
 
-        let arr2 = ["HTML", "JavaScript", "CSS"];
-        let sorted = copySorted(arr2);
+        let calc = new Calculator;
+        alert(calc.calculate("3 + 7"));
 
-        alert(sorted);
-        alert(arr2);
+        let powerCalc = new Calculator;
+        powerCalc.addMethod("*", (a, b) => a * b);
+        powerCalc.addMethod("/", (a, b) => a / b);
+        powerCalc.addMethod("**", (a, b) => a ** b);
+        let result = powerCalc.calculate("2 ** 3");
+        alert(result);
     </script>
 </body>
 
