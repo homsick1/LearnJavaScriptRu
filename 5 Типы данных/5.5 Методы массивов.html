@@ -188,7 +188,7 @@
 
         // // 8. find()
         // // Метод возвращает значение первого найденного в массиве элемента,
-        // // которое удовлетворяет услвоию переданному в callback функции. В
+        // // которое удовлетворяет условию переданному в callback функции. В
         // // противном случае возвращает undefined
 
         // function isPrime(element, inex, array) {
@@ -413,38 +413,134 @@
         // alert(sorted);
         // alert(arr2);
 
-        // 6. Создать расширяемый калькулятор
-        function Calculator() {
-            this.methods = {
-                "-": (a, b) => a - b,
-                "+": (a, b) => a + b,
-            };
-            this.calculate = function (str) {
-                let split = str.split(' '),
-                    a = +split[0],
-                    op = split[1],
-                    b = +split[2];
+        // // 6. Создать расширяемый калькулятор
+        // function Calculator() {
+        //     this.methods = {
+        //         "-": (a, b) => a - b,
+        //         "+": (a, b) => a + b,
+        //     };
+        //     this.calculate = function (str) {
+        //         let split = str.split(' '),
+        //             a = +split[0],
+        //             op = split[1],
+        //             b = +split[2];
 
-                if (!this.methods[op] || isNaN(a) || isNaN(b)) {
-                    return NaN;
-                }
-                return this.methods[op](a, b);
-            }
-            this.addMethod = function (name, func) {
-                this.methods[name] = func;
-            };
+        //         if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+        //             return NaN;
+        //         }
+        //         return this.methods[op](a, b);
+        //     }
+        //     this.addMethod = function (name, func) {
+        //         this.methods[name] = func;
+        //     };
 
-        }
+        // }
 
-        let calc = new Calculator;
-        alert(calc.calculate("3 + 7"));
+        // let calc = new Calculator;
+        // alert(calc.calculate("3 + 7"));
 
-        let powerCalc = new Calculator;
-        powerCalc.addMethod("*", (a, b) => a * b);
-        powerCalc.addMethod("/", (a, b) => a / b);
-        powerCalc.addMethod("**", (a, b) => a ** b);
-        let result = powerCalc.calculate("2 ** 3");
-        alert(result);
+        // let powerCalc = new Calculator;
+        // powerCalc.addMethod("*", (a, b) => a * b);
+        // powerCalc.addMethod("/", (a, b) => a / b);
+        // powerCalc.addMethod("**", (a, b) => a ** b);
+        // let result = powerCalc.calculate("2 ** 3");
+        // alert(result);
+
+        // // 7. Трансформировать в массив имён
+        // let vasya = { name: "Вася", age: 25 };
+        // let petya = { name: "Петя", age: 30 };
+        // let masha = { name: "Маша", age: 28 };
+
+        // let users = [vasya, petya, masha];
+
+        // let names = users.map(item => item.name);
+        // alert(names);
+
+        // // 8. Трансформировать в объекты
+        // let vasya1 = { name: "Вася", surname: "Пупкин", id: 1 };
+        // let petya1 = { name: "Петя", surname: "Иванов", id: 2 };
+        // let masha1 = { name: "Маша", surname: "Петрова", id: 3 };
+
+        // let users1 = [vasya1, petya1, masha1];
+
+        // let usersMapped = users1.map(user => ({
+        //     fullName: `${user.name} ${user.surname}`,
+        //     id: user.id
+        // }));
+
+        // alert(usersMapped[0].id);
+        // alert(usersMapped[0].fullName);
+
+        // // 9. Отсортировать пользователей по возрасту
+        // function sortByAge(array) {
+        //     function compare(a, b) {
+        //         return a.age - b.age;
+        //     }
+        //     array.sort((compare));           
+        // }
+
+        // let vasya2 = { name: "Вася", age: 25 };
+        // let petya2 = { name: "Петя", age: 30 };
+        // let masha2 = { name: "Маша", age: 28 };
+
+        // let arr = [vasya2, petya2, masha2];
+
+        // sortByAge(arr);
+
+        // alert(arr[0].name);
+        // alert(arr[1].name);
+        // alert(arr[2].name);
+
+        // // 10. Перемешайте массив
+
+        // // Простой вариант
+        // function shuffle(array) {
+        //     array.sort(() => Math.random() - 0.5);
+        // }
+        // let arr = [1, 2, 3];
+        // shuffle(arr);
+        // alert(arr);
+
+        // // Сложный вариант Тасование Фишера-Йетса
+        // function shuffle1(array) {
+        //     for (let i = array.length - 1; i > 0; i--) {
+        //         let j = Math.floor(Math.random() * (i + 1));
+        //         let t = array[i]; array[i] = array[j]; array[j] = t
+        //     }
+        // }
+
+        // let arr1 = [1, 2, 3];
+        // shuffle1(arr1);
+        // alert(arr1);
+
+        // // 11. Получить средний возраст
+
+        // function getAverageAge(users) {
+        //     return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+        // }
+
+        // let vasya3 = { name: "Вася", age: 25 };
+        // let petya3 = { name: "Петя", age: 30 };
+        // let masha3 = { name: "Маша", age: 29 };
+
+        // let arr3 = [vasya3, petya3, masha3];
+
+        // alert(getAverageAge(arr3));
+
+        // // 12. Оставить уникальные элементы массива
+        // function unique(arr) {
+        //     let result = [];
+        //     for (let str of arr) {
+        //         if (!result.includes(str)) {
+        //             result.push(str);
+        //         }
+        //     }
+        //     return result;
+        // }
+        // let strings = ["кришна", "кришна", "харе", "харе",
+        //     "харе", "харе", "кришна", "кришна", ":-O"
+        // ];
+        // alert(unique(strings));
     </script>
 </body>
 
