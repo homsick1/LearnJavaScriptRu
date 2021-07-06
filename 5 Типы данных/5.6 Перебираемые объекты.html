@@ -10,6 +10,7 @@
 
 <body>
     <script>
+        'use strict'
         // // 1. Symbol.iterator
         // let range = {
         //     from: 1,
@@ -50,16 +51,32 @@
         //     alert(char);
         // }
 
-        // 3. Явный вызов итератора
-        let str = "Hello";
+        // // 3. Явный вызов итератора
+        // let str = "Hello";
 
-        let iterator = str[Symbol.iterator]();
+        // let iterator = str[Symbol.iterator]();
 
-        while (true) {
-            let result = iterator.next();
-            if (result.done) break;
-            alert(result.value);
-        }
+        // while (true) {
+        //     let result = iterator.next();
+        //     if (result.done) break;
+        //     alert(result.value);
+        // }
+
+        // 4. Итерируемые объекты и псевдомассивы
+        // Итерируемые объекты - это объекты, которые реализуют метод
+        // Symbol.iterator
+        // Псевдомассивы - это объекты, у которых есть индексы и свойство length,
+        // то есть, они выглядят как массивы
+
+        // Пример псевдомассива, его нельзя итерировать
+        let arrayLike = {
+            0: "Hello",
+            1: "World",
+            length: 2
+        };
+
+        for (let item of arrayLike) {}
+
 
     </script>
 </body>
