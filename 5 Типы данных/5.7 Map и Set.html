@@ -47,41 +47,44 @@
 
         // map.set("1", "str1").set(1, "num1").set(true, "bool1");
 
-        // 2. Перебор Map
-        // Три метода:
-        // map.keys() - возвращает итерируемый объект по ключам
-        // map.values() - возвращает итерируемый объект по значениям
-        // map.entries() - возвращает итерируемый объект по парам вида [ключ, значение]
+        // // 2. Перебор Map
+        // // Три метода:
+        // // map.keys() - возвращает итерируемый объект по ключам
+        // // map.values() - возвращает итерируемый объект по значениям
+        // // map.entries() - возвращает итерируемый объект по парам вида [ключ, значение]
 
-        let recipeMap = new Map([
-            ["огурец", 500],
-            ["помидор", 350],
-            ["лук", 50],
-        ])
+        // let recipeMap = new Map([
+        //     ["огурец", 500],
+        //     ["помидор", 350],
+        //     ["лук", 50],
+        // ])
 
-        // перебор по ключам (овощи)
-        for (let vegetables of recipeMap.keys()) {
-            alert(vegetables);
-        }
+        // // перебор по ключам (овощи)
+        // for (let vegetables of recipeMap.keys()) {
+        //     alert(vegetables);
+        // }
 
-        // перебор по значениям (числа)
-        for (let amount of recipeMap.values()) {
-            alert(amount);
-        }
+        // // перебор по значениям (числа)
+        // for (let amount of recipeMap.values()) {
+        //     alert(amount);
+        // }
 
-        // перебор по элементам в формате [ключ, значение]
-        for (let entry of recipeMap.entries()) {
-            alert(entry);
-        }
+        // // перебор по элементам в формате [ключ, значение]
+        // for (let entry of recipeMap.entries()) {
+        //     alert(entry);
+        // }
 
-        // Используется порядок вставки
-        // В отличие от обычных Object, в Map перебор происходит в том же порядке,
-        // в каком происходило добавленеие элементов
+        // // Используется порядок вставки
+        // // В отличие от обычных Object, в Map перебор происходит в том же порядке,
+        // // в каком происходило добавленеие элементов
 
-        // Метод forEach
-        recipeMap.forEach((value, key, map) => {
-            alert(`${key}: ${value}`);
-        });
+        // // Метод forEach
+        // recipeMap.forEach((value, key, map) => {
+        //     alert(`${key}: ${value}`);
+        // });
+
+        // 3. Object.entries: Map из Object
+        
     </script>
 </body>
 
