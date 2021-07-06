@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         'use strict'
+        // 1. Map
+        // Это коллекция ключ/значение, как Object. Любое значение может быть
+        // использовано в качестве ключей
+        // Методы и свойства:
+        // - new Map() - создает коллекцию
+        // - map.set(key, value) - записывает по ключу key значение value
+        // - map.get(key) - возвращает значение по ключу или undefined
+        // - map.has(key) - возвращает true, если ключ присутсвует в коллекции
+        // - map.delete(key) - удаляет элемент по ключу key
+        // - map.clear() - очищает коллекцию от всех элементов
+        // - map.size - возвращает текущее количество элементов
+
+        let map = new Map();
+
+        map.set("1", "str1");
+        map.set(1, "num1");
+        map.set(true, "bool1");
+
+        alert(map.get(1));
+        alert(map.get("1"));
+        alert(map.size);
+
+        // Объекты в качестве ключей
+
+        let john = { name: "John"};
+        let visitsCountMap = new Map();
+
+        visitsCountMap.set(john, 123);
+
+        alert(visitsCountMap.get(john));
+
+        // Цепочка вызовов
+        // Каждый вызов map.set возвращает объект map
+
+        map.set("1", "str1").set(1, "num1").set(true, "bool1");
+
     </script>
 </body>
+
 </html>
