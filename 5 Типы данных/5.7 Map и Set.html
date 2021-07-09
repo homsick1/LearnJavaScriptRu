@@ -119,42 +119,76 @@
         // const obj = Object.fromEntries(entries);
         // console.log(obj);
 
-        // 5. Set
-        // Объект позволяет хранить уникальные значения любого типа
-        // Методы:
-        // - new Set(iterable) - создаёт Set
-        // - set.add(value) - добавляет значение
-        // - set.delete(value) - удаляет значение
-        // - set.has(value) - удаляет значение, возвращает true, если value было
-        // - set.clear() - удаляет все значения
-        // - set.size - возвращает количество элементов в множестве
+        // // 5. Set
+        // // Объект позволяет хранить уникальные значения любого типа
+        // // Методы:
+        // // - new Set(iterable) - создаёт Set
+        // // - set.add(value) - добавляет значение
+        // // - set.delete(value) - удаляет значение
+        // // - set.has(value) - удаляет значение, возвращает true, если value было
+        // // - set.clear() - удаляет все значения
+        // // - set.size - возвращает количество элементов в множестве
 
-        let set = new Set();
+        // let set = new Set();
 
-        let john = { name: 'John' };
-        let pete = { name: 'Pete' };
-        let mary = { name: 'Mary' };
+        // let john = { name: 'John' };
+        // let pete = { name: 'Pete' };
+        // let mary = { name: 'Mary' };
 
-        set.add(john);
-        set.add(pete);
-        set.add(mary);
-        set.add(john);
-        set.add(pete);
+        // set.add(john);
+        // set.add(pete);
+        // set.add(mary);
+        // set.add(john);
+        // set.add(pete);
 
-        console.log(`set.size: ${set.size}`);
+        // console.log(`set.size: ${set.size}`);
 
-        for (let user of set) {
-            console.log(`user.name: ${user.name}`);
-        }
+        // for (let user of set) {
+        //     console.log(`user.name: ${user.name}`);
+        // }
 
-        // Перебор объекта Set
-        let set1 = new Set(["апельсин", "яблоко", "банан"]);
+        // // Перебор объекта Set
+        // let set1 = new Set(["апельсин", "яблоко", "банан"]);
 
-        for (let value of set1) console.log(value);
+        // for (let value of set1) console.log(value);
 
-        set1.forEach((value, valueAgain, set1) => {
-            console.log(value);
-        });
+        // set1.forEach((value, valueAgain, set1) => {
+        //     console.log(value);
+        // });
+
+        // Задачи
+
+        // // 1. Фильтрация уникальных элементов массива
+
+        // function unique(arr) {
+        //     return Array.from(new Set(arr));
+        // }
+
+        // let values = ["Hare", "Krishna", "Hare", "Krishna",
+        //     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+        // ];
+
+        // console.log(unique(values));
+
+        // // 2. Отфильтруйте анаграммы
+
+        // function aclean(arr) {
+        //     let obj = {};
+        //     for (let i = 0; i < arr.length; i++) {
+        //         let sorted = arr[i].toLowerCase().split("").sort().join("");
+        //         obj[sorted] = arr[i];
+        //     }
+        //     return Object.values(obj);
+        // }
+        // let arr = ["nap", "teachers", "PAN", "ear", "era", "hectares"];
+        // console.log(aclean(arr));
+
+        // 3. Перебираемые ключи
+
+        let map = new Map();
+        map.set("name", "John");
+        let keys = Array.from(map.keys());
+        keys.push("more");
 
     </script>
 </body>
