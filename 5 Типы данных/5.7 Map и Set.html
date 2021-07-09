@@ -83,8 +83,31 @@
         //     alert(`${key}: ${value}`);
         // });
 
-        // 3. Object.entries: Map из Object
-        
+        // 3. Object.entries. Преобразование Object в Map
+        // Метод возвращает массив пар ключ-значение
+
+        const object1 = {
+            a: 'somestring',
+            b: 42
+
+        };
+
+        for (const [key, value] of Object.entries(object1)) {
+            console.log(`${key}: ${value}`);
+        }
+
+        // Преобразование Object в Map
+        let obj = {
+            name: "John",
+            age: 30
+        };
+
+        let map = new Map(Object.entries(obj));
+        for (let entry of map.entries()) {
+            console.log(entry);
+        }
+
+
     </script>
 </body>
 
