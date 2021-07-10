@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         'use strict'
+        // // 1. WeakMap
+        // // Ключи в WeakMap должны быть объектами, а не примитивными значениями
+        // let weakMap = new WeakMap();
+        // let obj = {};
+
+        // weakMap.set(obj, "ok"); // Всё хорошо
+        // weakMap.set("test", "Whoops"); // Ошибка
+
+        // // Теперь, если мы используем объект в качестве ключа и если больше нет
+        // // ссылок на этот объект, то он будет удален из памяти автоматически
+
+        // let john = {name: "John"};
+        // let weakMap = new WeakMap();
+
+        // weakMap.set(john, "...");
+        // john = null;
+
+        // В WeakMap присутствуют только следующие методы:
+        // - weakMap.get(key)
+        // - weakMap.set(key, value)
+        // - weakMap.delete(key)
+        // - weakMap.has(key)
     </script>
 </body>
+
 </html>
