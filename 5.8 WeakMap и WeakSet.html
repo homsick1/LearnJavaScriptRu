@@ -78,29 +78,56 @@
         // obj = null;
         // alert(cache.size);
 
-        // 2. WeakSet
-        // Ключи в WeakMap должны быть объектами, а не примитивными значениями
-        // В WeakSet присутствуют только следующие методы:
-        // - WeakSet.get(key)
-        // - WeakSet.set(key, value)
-        // - WeakSet.delete(key)
-        // - WeakSet.has(key)
+        // // 2. WeakSet
+        // // Ключи в WeakMap должны быть объектами, а не примитивными значениями
+        // // В WeakSet присутствуют только следующие методы:
+        // // - WeakSet.get(key)
+        // // - WeakSet.set(key, value)
+        // // - WeakSet.delete(key)
+        // // - WeakSet.has(key)
 
-        let visitedSet = new WeakSet();
+        // let visitedSet = new WeakSet();
 
-        let john = { name: "John" };
-        let pete = { name: "Pete" };
-        let mary = { name: "Mary" };
+        // let john = { name: "John" };
+        // let pete = { name: "Pete" };
+        // let mary = { name: "Mary" };
 
-        visitedSet.add(john);
-        visitedSet.add(pete);
-        visitedSet.add(john);
+        // visitedSet.add(john);
+        // visitedSet.add(pete);
+        // visitedSet.add(john);
 
-        console.log(visitedSet.has(john));
-        console.log(visitedSet.has(mary));
-        john = null;
-        console.log(visitedSet.has(john));
+        // console.log(visitedSet.has(john));
+        // console.log(visitedSet.has(mary));
+        // john = null;
+        // console.log(visitedSet.has(john));
+
+        // // Задачи
+        // // 1. Хранение отметок "не прочитано"
+        // let message1 = { text: "Hello", from: "John" };
+        // let message2 = { text: "How goes?", from: "John" };
+        // let message3 = { text: "See you soon", from: "Alice" };
+
+        // let readedMessages = new WeakSet();
+
+        // readedMessages.add(message1);
+        // readedMessages.add(message2);
+        // readedMessages.add(message3);
+        // console.log(readedMessages.has(message1));
+
+        // message1 = null;           
+        // console.log(readedMessages.has(message1));
+
+        // 2. Хранение времени прочтения
+        let messages = [
+            { text: "Hello", from: "John" },
+            { text: "How goes?", from: "John" },
+            { text: "See you soon", from: "Alice" }
+        ];
         
+        let messagesDate = new WeakMap();
+
+        messagesDate.set(messages[0], new Date(2017, 1, 1));
+
     </script>
 </body>
 
