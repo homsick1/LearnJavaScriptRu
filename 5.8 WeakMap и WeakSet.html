@@ -28,59 +28,79 @@
         // weakMap.set(john, "...");
         // john = null;
 
-        // В WeakMap присутствуют только следующие методы:
-        // - weakMap.get(key)
-        // - weakMap.set(key, value)
-        // - weakMap.delete(key)
-        // - weakMap.has(key)
+        // // В WeakMap присутствуют только следующие методы:
+        // // - weakMap.get(key)
+        // // - weakMap.set(key, value)
+        // // - weakMap.delete(key)
+        // // - weakMap.has(key)
 
-        // Дополнительные данные
-        // В основном WeakMap используется в качестве дополнительного хранилища данных
+        // // Дополнительные данные
+        // // В основном WeakMap используется в качестве дополнительного хранилища данных
 
-        weakMap.set(john, "секретные документы");
+        // weakMap.set(john, "секретные документы");
 
-        // Счетчик посещений 
+        // // Счетчик посещений 
 
-        // visitsCount.js
-        let visitsCountMap = new Map(); // если использовать weakMap будет происходить очистка автоматически
+        // // visitsCount.js
+        // let visitsCountMap = new Map(); // если использовать weakMap будет происходить очистка автоматически
 
-        function countUser(user) {
-            let count = visitsCountMap.get(user) || 0;
-            visitsCountMap.set(user, count + 1);
-        }
+        // function countUser(user) {
+        //     let count = visitsCountMap.get(user) || 0;
+        //     visitsCountMap.set(user, count + 1);
+        // }
 
-        // main.js
+        // // main.js
+        // let john = { name: "John" };
+
+        // countUser(john);
+        // countUser(john);
+
+        // john = null;
+
+        // // Применение для кеширования
+
+        // // cache.js
+        // let cache = new Map(); // если использовать weakMap очистка кеша будет происходить  автоматически 
+
+        // function process(obj) {
+        //     if (!cache.has(obj)) {
+        //         let result = obj;
+        //         cache.set(obj, result);
+        //     }
+        //     return cache.get(obj);
+        // }
+
+        // // main.js
+        // let obj = {};
+        // let result1 = process(obj);
+        // let result2 = process(obj);
+
+        // obj = null;
+        // alert(cache.size);
+
+        // 2. WeakSet
+        // Ключи в WeakMap должны быть объектами, а не примитивными значениями
+        // В WeakSet присутствуют только следующие методы:
+        // - WeakSet.get(key)
+        // - WeakSet.set(key, value)
+        // - WeakSet.delete(key)
+        // - WeakSet.has(key)
+
+        let visitedSet = new WeakSet();
+
         let john = { name: "John" };
+        let pete = { name: "Pete" };
+        let mary = { name: "Mary" };
 
-        countUser(john);
-        countUser(john);
+        visitedSet.add(john);
+        visitedSet.add(pete);
+        visitedSet.add(john);
 
+        console.log(visitedSet.has(john));
+        console.log(visitedSet.has(mary));
         john = null;
-
-        // Применение для кеширования
-
-        // cache.js
-        let cache = new Map(); // если использовать weakMap очистка кеша будет происходить  автоматически 
-
-        function process(obj) {
-            if (!cache.has(obj)) {
-                let result = obj;
-                cache.set(obj, result);
-            }
-            return cache.get(obj);
-        }
-
-        // main.js
-        let obj = {};
-        let result1 = process(obj);
-        let result2 = process(obj);
-
-        obj = null;
-        alert(cache.size);
-
-
-
-
+        console.log(visitedSet.has(john));
+        
     </script>
 </body>
 
