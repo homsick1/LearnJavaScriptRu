@@ -33,6 +33,54 @@
         // - weakMap.set(key, value)
         // - weakMap.delete(key)
         // - weakMap.has(key)
+
+        // Дополнительные данные
+        // В основном WeakMap используется в качестве дополнительного хранилища данных
+
+        weakMap.set(john, "секретные документы");
+
+        // Счетчик посещений 
+
+        // visitsCount.js
+        let visitsCountMap = new Map(); // если использовать weakMap будет происходить очистка автоматически
+
+        function countUser(user) {
+            let count = visitsCountMap.get(user) || 0;
+            visitsCountMap.set(user, count + 1);
+        }
+
+        // main.js
+        let john = { name: "John" };
+
+        countUser(john);
+        countUser(john);
+
+        john = null;
+
+        // Применение для кеширования
+
+        // cache.js
+        let cache = new Map(); // если использовать weakMap очистка кеша будет происходить  автоматически 
+
+        function process(obj) {
+            if (!cache.has(obj)) {
+                let result = obj;
+                cache.set(obj, result);
+            }
+            return cache.get(obj);
+        }
+
+        // main.js
+        let obj = {};
+        let result1 = process(obj);
+        let result2 = process(obj);
+
+        obj = null;
+        alert(cache.size);
+
+
+
+
     </script>
 </body>
 
