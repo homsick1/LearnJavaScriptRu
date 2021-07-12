@@ -11,6 +11,145 @@
 <body>
     <script>
         'use strict'
+        // // Деструктуризация массива
+        // let arr = ["Ilya", "Kantor"]; // Массив с именем и фамилией
+        // let [firstName, surname] = arr; // Деструктирующее присваивание
+        // // Короткий вариант записи:
+        // // let firstName = arr[0];
+        // // let surname = arr[1];
+
+        // console.log(firstName);
+        // console.log(surname);
+
+        // [firstName, surname] = "Ilya Kantor".split(" "); // В сочетании со split
+        // console.log(firstName);
+        // console.log(surname);
+
+        // // Пропускание элементов, используя запятые
+        // let [name, , title] = ["Juilius", "Caesar", "Consul", "of the Roman Republic"];
+        // console.log(title);
+
+        // // Работает с любым перебираемым объектом с правой стороны
+        // let [a, b, c] = "abc";
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+
+        // let [one, two, three] = new Set([1, 2, 3]);
+        // console.log(one);
+
+        // console.log(two);
+        // console.log(three);
+
+        // // Присваивать чему угодно с левой стороны
+        // let user = {};
+        // [user.name, user.surname] = "Ilya Kantor".split(" ");
+        // console.log(user.name);
+        // console.log(user.surname);
+
+        // // Цикл с entries()
+        // let user = {
+        //     name: "John",
+        //     age: 30
+        // };
+
+        // for (let [key, value] of Object.entries(user)) {
+        //     console.log(`${key}:${value}`);
+        // }
+
+        // let user = new Map();
+        // user.set("name", "John");
+        // user.set("age", "30");
+
+        // for (let [key, value] of user) {
+        //     console.log(`${key}:${value}`);
+        // }
+
+        // // Остаточные параметры "..."
+        // let [name1, name2, ...rest] = ["Juilius", "Caesar", "Consul", "of the Roman Republic"];
+        // console.log(name1);
+        // console.log(name2);
+
+        // console.log(rest[0]);
+        // console.log(rest[1]);
+        // console.log(rest.length);
+
+        // // Значение по умолчанию
+        // let [firstName = "Vasya", surname = "Pupkin"] = [];
+        // console.log(firstName);
+        // console.log(surname);
+
+        // let [firstName1 = prompt("firstName?"), surname1 = prompt("surname?")] = ["Juilius"];
+        // console.log(firstName1);
+        // console.log(surname1);
+
+        // // Деструктуризация объекта
+        // let options = {
+        //     title: "Menu",
+        //     width: 100,
+        //     height: 200
+        // };
+
+        // let { title, width, height } = options;
+        // console.log(title);
+        // console.log(width);
+        // console.log(height);
+
+        // // Свойства options.title, options.width и options.height присваиваются
+        // // соответсвующим переменным. Порядок не имеет значения
+        // let { height1, width1, title1 } = { title: "Menu", height: 200, width: 100 }
+
+        // let { width: w, height: h, title: t } = options;
+        // console.log(t);
+        // console.log(w);
+        // console.log(h);
+
+        // // Можно установить значения по умолчанию
+        // let { width2: width3 = prompt("width?"), height2 = 100, title: title2 } = options;
+        // console.log(title2);
+        // console.log(width3);
+        // console.log(height2);
+
+        // // Остаток объекта "..."
+        // let { title: title3, ...rest } = options;
+        // console.log(title3);
+        // console.log(rest.width);
+        // console.log(rest.height);
+
+        // // Использование без let, нужно использовать скобки
+        // let title4, width4, height4
+        // ({ title4, width4, height4 } = { title4: "Menu", width4: 200, height4: 100 });
+        // console.log(title4);
+
+        // // Вложенная деструктуризация
+        // let options = {
+        //     size: {
+        //         width: 100,
+        //         height: 200
+        //     },
+        //     items: ["Cake", "Donut"],
+        //     extra: true
+        // };
+
+        // let { size: { width, height }, items: [item1, item2], title = "Menu" } = options;
+        // console.log(title);
+        // console.log(width);
+        // console.log(height);
+        // console.log(item1);
+        // console.log(item2);
+
+        // Умные параметры функций
+        let options = {
+            title: "My menu",
+            items: ["Item1", "Item2"]
+        };
+
+        function showMenu({title = "Untitled", width = 200, height = 100, items = []}) {
+            console.log(`${title} ${width} ${height}`);
+            console.log(items);
+        }
+        showMenu(options);     
+
     </script>
 </body>
 
