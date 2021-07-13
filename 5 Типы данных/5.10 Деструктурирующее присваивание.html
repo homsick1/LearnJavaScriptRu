@@ -138,17 +138,50 @@
         // console.log(item1);
         // console.log(item2);
 
-        // Умные параметры функций
-        let options = {
-            title: "My menu",
-            items: ["Item1", "Item2"]
+        // // Умные параметры функций
+        // let options = {
+        //     title: "My menu",
+        //     items: ["Item1", "Item2"]
+        // };
+
+        // function showMenu({ title = "Untitled", width = 200, height = 100, items = [] }) {
+        //     console.log(`${title} ${width} ${height}`);
+        //     console.log(items);
+        // }
+        // showMenu(options);
+
+        // // Задачи
+        // // Деструктирующее присваивание
+
+        // let user = {
+        //     name: "John",
+        //     years: 30
+        // };
+
+        // let { name, years: age, isAdmin = false } = user;
+        // console.log(name);
+        // console.log(age);
+        // console.log(isAdmin);
+
+        // Максимальная зарплата
+        let salaries = {
+            "John": 100,
+            "Pete": 300,
+            "Mary": 250
         };
 
-        function showMenu({title = "Untitled", width = 200, height = 100, items = []}) {
-            console.log(`${title} ${width} ${height}`);
-            console.log(items);
+        function topSalary(salaries) {
+            let topSalary = 0, employeeName = null;
+            for (let entry of Object.entries(salaries)) {
+                let [name, salary] = entry;
+                if (salary > topSalary) {
+                    topSalary = salary;
+                    employeeName = name;
+                }
+            } return employeeName;
         }
-        showMenu(options);     
+
+        console.log(topSalary(salaries));
 
     </script>
 </body>
