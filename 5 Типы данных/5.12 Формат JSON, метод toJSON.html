@@ -81,24 +81,56 @@
         // };
         // console.log(JSON.stringify(user, null, 2));
 
-        //  Пользовательский "toJSON"
+        // //  Пользовательский "toJSON"
+
+        // let room = {
+        //     number: 23,
+        //     toJSON() {
+        //         return this.number;
+        //     }
+        // };
+        // console.log(JSON.stringify(room));
+
+        // // JSON.parse
+
+        // let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+        // let meetup = JSON.parse(str, function (key, value) {
+        //     return (key == 'date') ? new Date(value) : value;
+        // });
+        // console.log(meetup.date.getDate());
+
+        // // Задачи
+        // // Преобразуйте объект в JSON, а затем обратно в обычный объект
+
+        // let user = {
+        //     name: "Василий Иванович",
+        //     age: 35
+        // };
+
+        // user = JSON.stringify(user);
+        // console.log(user);
+        // console.log(typeof(user));
+        // user = JSON.parse(user);
+        // console.log(user);
+        // console.log(typeof(user));
+
+        // Исключить обратные ссылки
 
         let room = {
-            number: 23,
-            toJSON() {
-                return this.number;
-            }
+            number: 23
         };
-        console.log(JSON.stringify(room));
+        let meetup = {
+            title: "Совещание",
+            occupiedBy: [{ name: "Иванов" }, { name: "Петров" }],
+            place: room
+        };
 
-        // JSON.parse
+        room.occupiedBy = meetup;
+        meetup.self = meetup;
+        console.log(JSON.stringify(meetup, function replacer(key, value) {
+            return (key != '' && value == meetup) ? undefined : value;
+        }));
 
-        let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
-        let meetup = JSON.parse(str, function (key, value) {
-            return (key == 'date') ? new Date(value) : value;
-        });
-        console.log(meetup.date.getDate());
-        
     </script>
 </body>
 
