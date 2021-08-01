@@ -137,16 +137,85 @@
         // console.log(sumTo(4));
         // console.log(sumTo(100));
 
-        // 2. Вычислить факториал
+        // // 2. Вычислить факториал
 
-        function factorial(n) {
-            let sum = 0;
-            if (n == 1) {return 1};
-            return sum = n * factorial(n-1);
+        // function factorial(n) {
+        //     let sum = 0;
+        //     if (n == 1) { return 1 };
+        //     return sum = n * factorial(n - 1);
+        // }
+
+        // console.log(factorial(5));
+
+        // // 3. Числа Фиббоначи
+
+        // function fib(n) {
+        //     let sum = 0;
+        //     if (n <= 1) {
+        //         return n;
+        //     } else {
+        //         return sum = fib(n - 1) + fib(n - 2);
+        //     }
+        // }
+
+        // function fib(n) {
+        //     let a = 1;
+        //     let b = 1;
+        //     for (let i = 3; i <= n; i++) {
+        //         let c = a + b;
+        //         a = b;
+        //         b = c;
+        //     }
+        //     return b;
+        // }
+
+        // console.log(fib(2));
+
+        // // 4. Вывод односвязного списка
+
+        // let list = {
+        //     value: 1,
+        //     next: {
+        //         value: 2,
+        //         next: {
+        //             value: 3,
+        //             next: {
+        //                 value: 4,
+        //                 next: null
+        //             }
+        //         }
+        //     }
+        // };
+
+        // function printList(list) {
+        //     let tmp = list;
+
+        //     while (tmp) {
+        //         console.log(tmp.value);
+        //         tmp = tmp.next;
+        //     }
+        // }
+
+        // function printList(list) {
+        //     console.log(list.value) 
+
+        //     if(list.next) {
+        //         printList(list.next);
+        //     }
+        // }
+
+        // printList(list);
+
+        // 5. Вывод односвязного списка в обратном порядке
+
+        function printReverseList(list) {
+            if (list.next) {
+                printReverseList(list.next);
+            }
+            alert(list.value);
         }
+        printReverseList(list);
 
-        console.log(factorial(5));
-       
     </script>
 </body>
 
